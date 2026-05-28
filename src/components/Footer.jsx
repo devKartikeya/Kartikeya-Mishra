@@ -50,18 +50,18 @@ const Footer = () => {
 
                 {/* Right: Quick Links */}
                 <div className="flex space-x-6 text-sm">
-                    <Link to="about" className="hover:text-pink-500 transition-colors" smooth={true} duration={500}>
+                    <a href="#about" className="hover:text-pink-500 transition-colors" smooth={true} duration={500}>
                         About
-                    </Link>
-                    <Link to="projects" className="hover:text-pink-500 transition-colors" smooth={true} duration={500}>
+                    </a>
+                    <a href="#projects" className="hover:text-pink-500 transition-colors" smooth={true} duration={500}>
                         Projects
-                    </Link>
-                    <Link to="skills" className="hover:text-pink-500 transition-colors" smooth={true} duration={500}>
+                    </a>
+                    <a href="#skills" className="hover:text-pink-500 transition-colors" smooth={true} duration={500}>
                         Skills
-                    </Link>
-                    <Link to="contact" className="hover:text-pink-500 transition-colors" smooth={true} duration={500}>
+                    </a>
+                    <a href="#contact" className="hover:text-pink-500 transition-colors" smooth={true} duration={500}>
                         Contact
-                    </Link>
+                    </a>
                 </div>
             </div>
 

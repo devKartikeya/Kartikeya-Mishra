@@ -51,7 +51,7 @@ const Navbar = () => {
             ref={el => (linksRef.current[i] = el)}
             className="hover:text-pink-500 transition-colors cursor-pointer"
           >
-            <Link to={`/${item.toLowerCase()}`}>{item}</Link>
+            <a href={`#${item.toLowerCase()}`}>{item}</a>
           </li>
         ))}
         {/* CTA Button (Desktop only) */}
@@ -74,11 +74,11 @@ const Navbar = () => {
           <div ref={logoRef} className="text-white text-2xl font-bold tracking-wide">
             Kartikeya<span className="text-pink-500">.</span>
           </div>
-          <Link to="/" className="hover:text-pink-500">Home</Link>
-          <Link to="/about" className="hover:text-pink-500">About</Link>
-          <Link to="/projects" className="hover:text-pink-500">Projects</Link>
-          <Link to="/skills" className="hover:text-pink-500">Skills</Link>
-          <Link to="/contact" className="hover:text-pink-500">Contact</Link>
+          <a href="#home" className="hover:text-pink-500">Home</a>
+          <a href="#about" className="hover:text-pink-500">About</a>
+          <a href="#projects" className="hover:text-pink-500">Projects</a>
+          <a href="#skills" className="hover:text-pink-500">Skills</a>
+          <a href="#contact" className="hover:text-pink-500">Contact</a>
           <button className="px-5 py-2 bg-gradient-to-r from-pink-500 to-purple-600 text-white rounded-lg shadow-md">
             Resume
           </button>

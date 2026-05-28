@@ -41,7 +41,7 @@ const Projects = () => {
             link: "http://localhost:5173/",
             github: "https://github.com/devKartikeya/Kartikeya-Mishra.git"
         },
-         {
+        {
             title: "Xpense Tracker",
             description: "A user-centric tracker with responsive UI and secure admin flows.",
             image: "/Xpense-Tracker.png",
