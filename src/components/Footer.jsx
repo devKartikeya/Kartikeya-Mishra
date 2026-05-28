@@ -18,6 +18,11 @@ const Footer = () => {
                     <p className="text-sm mt-2 text-gray-400">
                         Crafting digital experiences with passion, precision, and innovation.
                     </p>
+                    <p className="text-sm mt-2 text-gray-400">
+                       <span className="text-gray-400 font-bold">For Business : </span> <a href="mailto:kartikeya2122008@gmail.com" className="hover:text-pink-500 transition-colors">
+                            kartikeya2122008@gmail.com
+                        </a>
+                    </p>
                 </div>
 
                 {/* Center: Social Links */}

@@ -35,6 +35,13 @@ const Projects = () => {
 
     const projects = [
         {
+            title: "Xpense Tracker",
+            description: "A user-centric tracker with responsive UI and secure admin flows built using the MERN stack.",
+            image: "/Xpense-Tracker.png",
+            link: "https://expense-tracker-mern-project-seven.vercel.app/",
+            github: "https://github.com/devKartikeya/Expense-Tracker-MERN-Project.git"
+        },
+        {
             title: "Portfolio Website",
             description: "Premium brutalist design with glassmorphism and GSAP animations.",
             image: "/Portfolio.png",
@@ -42,15 +49,8 @@ const Projects = () => {
             github: "https://github.com/devKartikeya/Kartikeya-Mishra.git"
         },
         {
-            title: "Xpense Tracker",
-            description: "A user-centric tracker with responsive UI and secure admin flows.",
-            image: "/Xpense-Tracker.png",
-            link: "https://expense-tracker-mern-project-seven.vercel.app/",
-            github: "https://github.com/devKartikeya/Expense-Tracker-MERN-Project.git"
-        },
-        {
-            title: "ChatApp Using React",
-            description: "A real-time chat application built with React and Node.js.",
+            title: "Confab - Chat App",
+            description: "A real-time chat application built with React and Node.js built on the top of WebSockets.",
             image: "/Confab.png",
             link: "https://chat-app-using-react-ebon.vercel.app",
             github: "https://github.com/devKartikeya/Chat-App-Using-React.git"
@@ -85,7 +85,7 @@ const Projects = () => {
                                 to={proj.link}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-block px-4 py-2 mx-3 bg-gradient-to-r from-pink-500 to-purple-600 text-white rounded-lg shadow-md hover:shadow-[0_0_15px_rgba(236,72,153,0.8)] transition"
+                                className="inline-block px-4 py-2 mx-3 my-2 bg-gradient-to-r from-pink-500 to-purple-600 text-white rounded-lg shadow-md hover:shadow-[0_0_15px_rgba(236,72,153,0.8)] transition"
                             >
                                 View Project
                             </Link>
@@ -93,7 +93,7 @@ const Projects = () => {
                                 to={proj.github}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-block px-4 py-2 mx-3 bg-gradient-to-r from-pink-500 to-purple-600 text-white rounded-lg shadow-md hover:shadow-[0_0_15px_rgba(236,72,153,0.8)] transition"
+                                className="inline-block px-4 py-2 mx-3 my-2 bg-gradient-to-r from-pink-500 to-purple-600 text-white rounded-lg shadow-md hover:shadow-[0_0_15px_rgba(236,72,153,0.8)] transition"
                             >
                                 View GitHub
                             </Link>

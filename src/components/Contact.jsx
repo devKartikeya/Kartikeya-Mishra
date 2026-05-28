@@ -48,7 +48,7 @@ const Contact = () => {
                 Contact Me
             </h2>
 
-            <div className="contact-card backdrop-blur-md bg-white/5 border border-white/10 rounded-2xl shadow-lg max-w-3xl mx-auto p-8 md:p-12">
+            <div className="contact-card backdrop-blur-md bg-white/5 border border-white/10 rounded-2xl shadow-lg max-w-6xl mx-auto p-8 md:p-12">
                 <form onSubmit={sendEmail} className="flex flex-col space-y-6">
                     <input type="text" name="from_name" placeholder="Your Name" required className="w-full px-4 py-3 rounded-lg bg-black/40 border border-gray-700 text-white focus:outline-none focus:border-pink-500 transition" />
                     <input type="email" name="from_email" placeholder="Your Email" required className="w-full px-4 py-3 rounded-lg bg-black/40 border border-gray-700 text-white focus:outline-none focus:border-pink-500 transition" />

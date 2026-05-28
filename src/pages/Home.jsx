@@ -71,6 +71,8 @@ const Home = () => {
             duration: 0.08, // slower
             stagger: 0.08,
             ease: "power1.inOut",
+            repeat: Infinity,
+            yoyo: true,
             scrollTrigger: {
                 trigger: roleRef.current,
                 start: "top 80%",
