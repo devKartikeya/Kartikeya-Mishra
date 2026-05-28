@@ -2,7 +2,6 @@ import React, { forwardRef } from 'react'
 import { Link } from 'react-router-dom'
 
 const Button = forwardRef(({ icon, command, to }, ref) => {
-    console.log(icon)
     return (
         <button
             ref={ref}
