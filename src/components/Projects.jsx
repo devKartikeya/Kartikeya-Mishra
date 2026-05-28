@@ -35,6 +35,13 @@ const Projects = () => {
 
     const projects = [
         {
+            title: "Portfolio Website",
+            description: "Premium brutalist design with glassmorphism and GSAP animations.",
+            image: "/Portfolio.png",
+            link: "http://localhost:5173/",
+            github: "https://github.com/devKartikeya/Kartikeya-Mishra.git"
+        },
+         {
             title: "Xpense Tracker",
             description: "A user-centric tracker with responsive UI and secure admin flows.",
             image: "/Xpense-Tracker.png",
@@ -42,16 +49,9 @@ const Projects = () => {
             github: "https://github.com/devKartikeya/Expense-Tracker-MERN-Project.git"
         },
         {
-            title: "Portfolio Website",
-            description: "Premium brutalist design with glassmorphism and GSAP animations.",
-            image: "/Portfolio.png",
-            link: "http://localhost:5173/",
-            github: "https://github.com/devKartikeya/Kartikeya-Mishra.git"
-        },
-        {
             title: "ChatApp Using React",
             description: "A real-time chat application built with React and Node.js.",
-            image: "/ChatApp.png",
+            image: "/Confab.png",
             link: "https://chat-app-using-react-ebon.vercel.app",
             github: "https://github.com/devKartikeya/Chat-App-Using-React.git"
         }
