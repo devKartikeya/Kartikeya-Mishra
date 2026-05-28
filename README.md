@@ -35,17 +35,23 @@ npm install
 npm start
 ```
 
-Run the development server:bashCopynpm start
+Run the development server:
+__________________________________
+
 ⚙️ Configuration:
 EmailJS SetupCreate an account at EmailJS.
 Set up a service (e.g., Gmail).
-Create a template with fields:from_namefrom_emailmessageCopy your Service ID, Template ID, and Public Key.Add them to your .env file:envCopyREACT_APP_EMAILJS_SERVICE_ID=service_xxxxxx
-REACT_APP_EMAILJS_TEMPLATE_ID=template_xxxxxx
-REACT_APP_EMAILJS_PUBLIC_KEY=AbCdEfGhIjKlMnOp🎨
+Create a template with EmailJS 🎨
+Use it in Contact Component 
+
+___________________________________
+
 ContactFeel free to reach out via the contact form or directly at:
 Email: devKartikeya2122008@gmail.com
 GitHub: devKartikeya
 LinkedIn: Kartikeya Mishra
+
+___________________________________
 📄 License: This project is licensed under the MIT License.
 You are free to use, modify, and distribute with attribution.Copy---
 
