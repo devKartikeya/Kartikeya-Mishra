@@ -39,20 +39,27 @@ Run the development server:
 __________________________________
 
 ⚙️ Configuration:
+
 EmailJS SetupCreate an account at EmailJS.
+
 Set up a service (e.g., Gmail).
+
 Create a template with EmailJS 🎨
+
 Use it in Contact Component 
 
 ___________________________________
 
 ContactFeel free to reach out via the contact form or directly at:
 Email: devKartikeya2122008@gmail.com
+
 GitHub: devKartikeya
+
 LinkedIn: Kartikeya Mishra
 
 ___________________________________
 📄 License: This project is licensed under the MIT License.
+
 You are free to use, modify, and distribute with attribution.Copy---
 
 ✨✨
