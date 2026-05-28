@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import { Navigation } from 'swiper/modules'
+import { Link } from 'react-router-dom'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -36,20 +37,23 @@ const Projects = () => {
         {
             title: "Xpense Tracker",
             description: "A user-centric tracker with responsive UI and secure admin flows.",
-            // image: "/project1.png",
-            link: "https://github.com/devKartikeya/Expense-Tracker-MERN-Project.git"
+            image: "/Xpense-Tracker.png",
+            link: "https://expense-tracker-mern-project-seven.vercel.app/",
+            github: "https://github.com/devKartikeya/Expense-Tracker-MERN-Project.git"
         },
         {
             title: "Portfolio Website",
             description: "Premium brutalist design with glassmorphism and GSAP animations.",
-            // image: "/project2.png",
-            link: "https://github.com/devKartikeya/portfolio"
+            image: "/Portfolio.png",
+            link: "http://localhost:5173/",
+            github: "https://github.com/devKartikeya/Kartikeya-Mishra.git"
         },
         {
             title: "ChatApp Using React",
             description: "A real-time chat application built with React and Node.js.",
-            // image: "/project3.png",
-            link: "https://github.com/devKartikeya/Chat-App-Using-React.git"
+            image: "/ChatApp.png",
+            link: "https://chat-app-using-react-ebon.vercel.app",
+            github: "https://github.com/devKartikeya/Chat-App-Using-React.git"
         }
     ]
 
@@ -74,17 +78,25 @@ const Projects = () => {
                     <SwiperSlide key={i}>
                         <div className="project-card backdrop-blur-md bg-white/5 border border-white/10 rounded-2xl shadow-lg p-6 
                 hover:scale-105 transition-transform duration-500 will-change-transform">
-                            {/* <img src={proj.image} alt={proj.title} className="w-full h-40 object-cover rounded-lg mb-4" /> */}
+                            <img src={proj.image} alt={proj.title} className="w-full h-40 object-cover rounded-lg mb-4" />
                             <h3 className="text-xl font-semibold mb-2">{proj.title}</h3>
                             <p className="text-gray-300 text-sm mb-4">{proj.description}</p>
-                            <a
-                                href={proj.link}
+                            <Link
+                                to={proj.link}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-block px-4 py-2 bg-gradient-to-r from-pink-500 to-purple-600 text-white rounded-lg shadow-md hover:shadow-[0_0_15px_rgba(236,72,153,0.8)] transition"
+                                className="inline-block px-4 py-2 mx-3 bg-gradient-to-r from-pink-500 to-purple-600 text-white rounded-lg shadow-md hover:shadow-[0_0_15px_rgba(236,72,153,0.8)] transition"
                             >
                                 View Project
-                            </a>
+                            </Link>
+                            <Link
+                                to={proj.github}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-block px-4 py-2 mx-3 bg-gradient-to-r from-pink-500 to-purple-600 text-white rounded-lg shadow-md hover:shadow-[0_0_15px_rgba(236,72,153,0.8)] transition"
+                            >
+                                View GitHub
+                            </Link>
                         </div>
                     </SwiperSlide>
                 ))}

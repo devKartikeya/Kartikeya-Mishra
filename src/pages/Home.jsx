@@ -91,8 +91,6 @@ const Home = () => {
         })
     }, [])
 
-
-
     return (
         <div className="bg-black w-screen min-h-screen flex flex-col" id='home'>
             <Navbar />
