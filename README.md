@@ -187,6 +187,7 @@ It represents my continuous learning journey in:
 
 * Full Stack Development
 * Modern Frontend Engineering
+* System Design and scalable development
 * UI/UX Design
 * Performance-focused Web Applications
 
@@ -208,11 +209,11 @@ It represents my continuous learning journey in:
 
 Feel free to connect or collaborate 🚀
 
-📧 Email: **[devKartikeya2122008@gmail.com](mailto:devKartikeya2122008@gmail.com)**
+📧 Email: **[kartikeya2122008@gmail.com](mailto:kartikeya2122008@gmail.com)**
 
 💻 GitHub: **devKartikeya**
 
-🔗 LinkedIn: **Kartikeya Mishra**
+🔗 LinkedIn: **https://linkedin.com/in/kartikeya-mishra-8199973a9**
 
 ---
 
