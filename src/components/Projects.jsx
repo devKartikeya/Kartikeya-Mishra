@@ -38,7 +38,7 @@ const Projects = () => {
             title: "Xpense Tracker",
             description:
                 "A full‑stack MERN application designed to empower users with complete financial control. It combines expense tracking, income management, animated charts & graphs, ledger view and budget analysis with a secure authentication system. Xpense Tracker delivers a reliable and scalable platform for smarter money management.",
-            image: "/xpense.png",
+            image: "/X.png",
             link: "https://expense-tracker-mern-project-seven.vercel.app/",
             github: "https://github.com/devKartikeya/Expense-Tracker-MERN-Project.git"
         },

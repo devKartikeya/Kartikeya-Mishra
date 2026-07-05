@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { FaReact, FaNodeJs, FaPython, FaGitAlt, FaDocker, FaJava, FaLaravel, FaPhp, FaJs, FaFileExcel, FaGithub } from 'react-icons/fa'
-import { SiMongodb, SiTailwindcss, SiExpress, SiGsap, SiMysql, SiPostgresql, SiFigma, SiMongoose, SiCanva  } from 'react-icons/si'
+import { SiMongodb, SiTailwindcss, SiExpress, SiGsap, SiMysql, SiPostgresql, SiFigma, SiMongoose, SiCanva, SiPrisma, SiShadcnui } from 'react-icons/si'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -49,13 +49,13 @@ const Skills = () => {
             { name: "MongoDB", icon: <SiMongodb className="text-green-400" /> },
             { name: "MySQL", icon: <SiMysql className="text-blue-400" /> },
             { name: "PostgreSQL", icon: <SiPostgresql className="text-pink-500" /> },
-            { name: "Mongoose", icon: <SiMongoose className="text-yellow-500" /> }
+            { name: "Prisma", icon: <SiPrisma className="text-green-700" /> }
         ],
         Styling: [
             { name: "GSAP", icon: <SiGsap className="text-green-300" /> },
-            { name: "Figma", icon: <SiFigma className="text-purple-300" /> },
             { name: "TailwindCSS", icon: <SiTailwindcss className="text-sky-400" /> },
-            { name: "Canva", icon: <SiCanva className="text-green-600" /> },
+            { name: "Shadcn UI", icon: <SiShadcnui className="text-white" /> },
+            { name: "Figma", icon: <SiFigma className="text-purple-300" /> },
         ]
     }
 
