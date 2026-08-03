@@ -35,12 +35,28 @@ const Projects = () => {
 
     const projects = [
         {
+            title: "Node.js GitHub Actions CI/CD",
+            description:
+                "A production-ready CI/CD pipeline built with GitHub Actions for a Node.js application. Every push automatically provisions a GitHub-hosted runner, installs dependencies, executes Jest tests, builds a Docker image, and publishes the image securely to Docker Hub. The project demonstrates modern Continuous Integration and Continuous Delivery practices.",
+            image: "Nodejs-GitHub-Actions-CI-CD.png", // Add a screenshot of the project
+            link: "https://hub.docker.com/r/devkartikeya/nodejs-github-actions-ci",
+            github: "https://github.com/devKartikeya/Nodejs-Github-actions-CI-CD-Pipeline.git"
+        },
+        {
             title: "Xpense Tracker",
             description:
                 "A full‑stack MERN application designed to empower users with complete financial control. It combines expense tracking, income management, animated charts & graphs, ledger view and budget analysis with a secure authentication system. Xpense Tracker delivers a reliable and scalable platform for smarter money management.",
             image: "/X.png",
             link: "https://expense-tracker-mern-project-seven.vercel.app/",
             github: "https://github.com/devKartikeya/Expense-Tracker-MERN-Project.git"
+        },
+        {
+            title: "Dockerized URL Shortener",
+            description:
+                "A Node.js URL Shortener fully containerized with Docker. The project demonstrates Docker image creation, container lifecycle management, networking, persistent storage concepts, efficent Dockerfile, Docker Compose, and production-ready containerization practices for backend applications.",
+            image: "Dockerized-URL-Shortener.png", // Add a screenshot of the project
+            link: "https://hub.docker.com/r/devkartikeya/dockerizedurlshortener-app",
+            github: "https://github.com/devKartikeya/Dockerized-URL-Shortener.git"
         },
         {
             title: "Portfolio Website",
