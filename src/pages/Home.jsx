@@ -56,7 +56,7 @@ const Home = () => {
         })
 
         // Role typing (slower)
-        const roles = "UX Designer | MERN Developer | Laravel | DevOps Enthusiast"
+        const roles = "Building Scalable Systems | MERN Developer | Laravel | DevOps Enthusiast"
         const roleChars = roles.split("")
         roleRef.current.innerHTML = ""
         roleChars.forEach(char => {

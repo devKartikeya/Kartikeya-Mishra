@@ -1,6 +1,8 @@
 @import "tailwindcss";
 
+
 #home {
+    overflow-x: hidden;
     font-family: 'Poppins', sans-serif;
 }
 

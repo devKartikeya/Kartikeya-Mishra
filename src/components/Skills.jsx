@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { FaReact, FaNodeJs, FaPython, FaGitAlt, FaDocker, FaJava, FaLaravel, FaPhp, FaJs, FaFileExcel, FaGithub } from 'react-icons/fa'
-import { SiMongodb, SiTailwindcss, SiExpress, SiGsap, SiMysql, SiPostgresql, SiFigma, SiMongoose, SiCanva, SiPrisma, SiShadcnui } from 'react-icons/si'
+import { SiMongodb, SiTailwindcss, SiExpress, SiGsap, SiMysql, SiPostgresql, SiFigma, SiMongoose, SiCanva, SiPrisma, SiShadcnui, SiLinux, SiGithubactions } from 'react-icons/si'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -39,11 +39,11 @@ const Skills = () => {
             { name: "Express", icon: <SiExpress className="text-gray-300" /> },
             { name: "Laravel", icon: <FaLaravel className="text-red-400" /> }
         ],
-        Tools: [
+        DevOps: [
             { name: "Git", icon: <FaGitAlt className="text-red-500" /> },
             { name: "Docker", icon: <FaDocker className="text-blue-500" /> },
-            { name: "Excel", icon: <FaFileExcel className="text-green-500" /> },
-            { name: "GitHub", icon: <FaGithub className="text-white" /> },
+            { name: "Linux", icon: <SiLinux className="text-yellow-500" /> },
+            { name: "GitHub Actions", icon: <SiGithubactions className="text-white" /> },
         ],
         Databases: [
             { name: "MongoDB", icon: <SiMongodb className="text-green-400" /> },

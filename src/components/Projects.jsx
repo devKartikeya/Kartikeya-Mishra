@@ -105,9 +105,9 @@ const Projects = () => {
                 {projects.map((proj, i) => (
                     <SwiperSlide key={i}>
                         <div className="project-card backdrop-blur-md bg-white/5 border border-white/10 rounded-2xl shadow-lg p-6 
-                hover:scale-105 transition-transform duration-500 will-change-transform">
+                hover:scale-105 transition-transform duration-500 will-change-transform hover:scale-105 hover:shadow-2xl hover:shadow-pink-500/20 hover:bg-gradient-to-r hover:from-pink-500/10 hover:to-purple-600/10 hover:border-pink-500/30">
                             <img src={proj.image} alt={proj.title} className="w-full h-40 object-cover rounded-lg mb-4" />
-                            <h3 className="text-xl font-semibold mb-2">{proj.title}</h3>
+                            <h3 className="text-xl font-semibold mb-2 cursor-default hover:text-pink-500">{proj.title}</h3>
                             <p className="text-gray-300 text-sm mb-4 text-center">{proj.description}</p>
                             <Link
                                 to={proj.link}

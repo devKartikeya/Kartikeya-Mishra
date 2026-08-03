@@ -1,5 +1,6 @@
 import React from 'react'
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
+import { SiThreads } from 'react-icons/si'
 import { Link } from 'react-router-dom'
 
 const Footer = () => {
@@ -39,7 +40,7 @@ const Footer = () => {
                         href="https://linkedin.com/in/kartikeya-mishra-8199973a9"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="hover:text-purple-500 transition-colors"
+                        className="hover:text-blue-600 transition-colors"
                     >
                         <FaLinkedin />
                     </a>
@@ -47,9 +48,17 @@ const Footer = () => {
                         href="https://twitter.com/"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="hover:text-blue-400 transition-colors"
+                        className="hover:text-gray-800 transition-colors"
                     >
                         <FaTwitter />
+                    </a>
+                     <a
+                        href="https://threads.com/@devkartikeya"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:text-blue-400 transition-colors"
+                    >
+                        <SiThreads />
                     </a>
                 </div>
 
