@@ -51,6 +51,14 @@ const Projects = () => {
             github: "https://github.com/devKartikeya/Expense-Tracker-MERN-Project.git"
         },
         {
+            title: "Heritage Junction",
+            description:
+                "Heritage Junction is a full‑stack travel platform built with Laravel & React. It showcases cultural destinations, packages, foods, and booking flows with a responsive UI powered by Tailwind and dynamic backend handling for travelers and routes with robust Admin management. The project demonstrates my ability to create a seamless travel experience.",
+            image: "Heritage-Junction.png", // Add a screenshot of the project
+            link: "https://github.com/devKartikeya/Heritage-Junction.git",
+            github: "https://github.com/devKartikeya/Heritage-Junction.git"
+        },
+        {
             title: "Dockerized URL Shortener",
             description:
                 "A Node.js URL Shortener fully containerized with Docker. The project demonstrates Docker image creation, container lifecycle management, networking, persistent storage concepts, efficent Dockerfile, Docker Compose, and production-ready containerization practices for backend applications.",
