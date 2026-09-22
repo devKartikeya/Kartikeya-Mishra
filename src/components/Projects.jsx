@@ -1,144 +1,305 @@
-import React, { useEffect, useRef } from 'react'
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import 'swiper/css'
-import 'swiper/css/navigation'
-import { Navigation } from 'swiper/modules'
-import { Link } from 'react-router-dom'
+import React, { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import {
+    FiExternalLink,
+    FiGithub,
+    FiArrowUpRight,
+} from "react-icons/fi";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
 
-gsap.registerPlugin(ScrollTrigger)
+import "swiper/css";
+import "swiper/css/navigation";
+
+gsap.registerPlugin(ScrollTrigger);
+
+const projects = [
+    {
+        title: "Shortify",
+        category: "Full-Stack · DevOps",
+        description:
+            "A scalable URL shortening platform exploring authentication, user-specific links, Redis, rate limiting, Docker, load balancing and CI/CD.",
+        image: "Shortify.png",
+        technologies: ["React", "Node.js", "MongoDB", "Docker"],
+        link: "#",
+        github: "#",
+    },
+    {
+        title: "Xpense Tracker",
+        category: "MERN Stack",
+        description:
+            "A full-stack personal finance platform with authentication, expense and income tracking, analytics, ledger views and administrative controls.",
+        image: "X.png",
+        technologies: ["React", "Express", "MongoDB", "JWT"],
+        link: "https://expense-tracker-mern-project-seven.vercel.app/",
+        github:
+            "https://github.com/devKartikeya/Expense-Tracker-MERN-Project.git",
+    },
+    {
+        title: "Heritage Junction",
+        category: "Laravel · React",
+        description:
+            "A travel platform for discovering cultural destinations, packages and travel experiences with dynamic backend workflows.",
+        image: "Heritage-Junction.png",
+        technologies: ["Laravel", "React", "MySQL", "Tailwind"],
+        link: "https://github.com/devKartikeya/Heritage-Junction.git",
+        github:
+            "https://github.com/devKartikeya/Heritage-Junction.git",
+    },
+    {
+        title: "Dockerized URL Shortener",
+        category: "Docker · Backend",
+        description:
+            "A containerized Node.js URL shortener demonstrating Docker images, networking, volumes, Compose and service isolation.",
+        image: "Dockerized-URL-Shortener.png",
+        technologies: ["Node.js", "Docker", "MongoDB"],
+        link: "https://hub.docker.com/r/devkartikeya/dockerizedurlshortener-app",
+        github:
+            "https://github.com/devKartikeya/Dockerized-URL-Shortener.git",
+    },
+    {
+        title: "Confab",
+        category: "Real-Time Application",
+        description:
+            "A real-time chat application built around WebSockets for instant communication between multiple users.",
+        image: "Confab.png",
+        technologies: ["React", "Node.js", "WebSockets"],
+        link: "https://chat-app-using-react-ebon.vercel.app",
+        github:
+            "https://github.com/devKartikeya/Chat-App-Using-React.git",
+    },
+    {
+        title: "Atmoscan",
+        category: "API Integration",
+        description:
+            "A weather dashboard consuming external APIs to present current weather conditions and forecast information.",
+        image: "atmoscan2.png",
+        technologies: ["React", "API", "CSS"],
+        link: "https://katmoscan.netlify.app",
+        github:
+            "https://github.com/devKartikeya/Atmoscan.git",
+    },
+];
 
 const Projects = () => {
-    const sectionRef = useRef(null)
+    const sectionRef = useRef(null);
+    const headingRef = useRef(null);
+    const sliderRef = useRef(null);
 
     useEffect(() => {
-        const cards = sectionRef.current.querySelectorAll('.project-card')
+        const ctx = gsap.context(() => {
+            // --------------------------------
+            // Heading animation
+            // --------------------------------
+            ScrollTrigger.create({
+                trigger: sectionRef.current,
+                start: "top 80%",
+                once: true,
 
-        gsap.fromTo(cards,
-            { opacity: 0, y: 50 },
-            {
-                opacity: 1,
-                y: 0,
-                duration: 1,
-                stagger: 0.25,
-                ease: 'expo.out',
-                scrollTrigger: {
-                    trigger: sectionRef.current,
-                    start: 'top 80%',
-                    once: true
+                onEnter: () => {
+                    gsap.fromTo(
+                        headingRef.current,
+                        {
+                            opacity: 0,
+                            y: 30,
+                        },
+                        {
+                            opacity: 1,
+                            y: 0,
+                            duration: 0.8,
+                            ease: "power3.out",
+                        }
+                    );
+                },
+            });
+
+            // --------------------------------
+            // Project cards animation
+            // --------------------------------
+            ScrollTrigger.create({
+                trigger: sliderRef.current,
+                start: "top 82%",
+                once: true,
+
+                onEnter: () => {
+                    const cards =
+                        sliderRef.current.querySelectorAll(".project-card");
+
+                    gsap.fromTo(
+                        cards,
+                        {
+                            opacity: 0,
+                            y: 40,
+                        },
+                        {
+                            opacity: 1,
+                            y: 0,
+                            duration: 0.7,
+                            stagger: 0.12,
+                            ease: "power3.out",
+                        }
+                    );
+                },
+            });
+
+            // --------------------------------
+            // Recalculate after layout settles
+            // --------------------------------
+            requestAnimationFrame(() => {
+                ScrollTrigger.refresh();
+            });
+
+            const refreshTimer = setTimeout(() => {
+                ScrollTrigger.refresh();
+            }, 500);
+
+            // Refresh when images finish loading
+            const images =
+                sectionRef.current.querySelectorAll("img");
+
+            images.forEach((img) => {
+                if (!img.complete) {
+                    img.addEventListener(
+                        "load",
+                        () => ScrollTrigger.refresh(),
+                        { once: true }
+                    );
                 }
-            }
-        )
-    }, [])
+            });
 
+            return () => {
+                clearTimeout(refreshTimer);
+            };
+        }, sectionRef);
 
-    const projects = [
-        {
-            title: "Node.js GitHub Actions CI/CD",
-            description:
-                "A production-ready CI/CD pipeline built with GitHub Actions for a Node.js application. Every push automatically provisions a GitHub-hosted runner, installs dependencies, executes Jest tests, builds a Docker image, and publishes the image securely to Docker Hub. The project demonstrates modern Continuous Integration and Continuous Delivery practices.",
-            image: "Nodejs-GitHub-Actions-CI-CD.png", // Add a screenshot of the project
-            link: "https://hub.docker.com/r/devkartikeya/nodejs-github-actions-ci",
-            github: "https://github.com/devKartikeya/Nodejs-Github-actions-CI-CD-Pipeline.git"
-        },
-        {
-            title: "Xpense Tracker",
-            description:
-                "A full‑stack MERN application designed to empower users with complete financial control. It combines expense tracking, income management, animated charts & graphs, ledger view and budget analysis with a secure authentication system. Xpense Tracker delivers a reliable and scalable platform for smarter money management.",
-            image: "/X.png",
-            link: "https://expense-tracker-mern-project-seven.vercel.app/",
-            github: "https://github.com/devKartikeya/Expense-Tracker-MERN-Project.git"
-        },
-        {
-            title: "Heritage Junction",
-            description:
-                "Heritage Junction is a full‑stack travel platform built with Laravel & React. It showcases cultural destinations, packages, foods, and booking flows with a responsive UI powered by Tailwind and dynamic backend handling for travelers and routes with robust Admin management. The project demonstrates my ability to create a seamless travel experience.",
-            image: "Heritage-Junction.png", // Add a screenshot of the project
-            link: "https://github.com/devKartikeya/Heritage-Junction.git",
-            github: "https://github.com/devKartikeya/Heritage-Junction.git"
-        },
-        {
-            title: "Dockerized URL Shortener",
-            description:
-                "A Node.js URL Shortener fully containerized with Docker. The project demonstrates Docker image creation, container lifecycle management, networking, persistent storage concepts, efficent Dockerfile, Docker Compose, and production-ready containerization practices for backend applications.",
-            image: "Dockerized-URL-Shortener.png", // Add a screenshot of the project
-            link: "https://hub.docker.com/r/devkartikeya/dockerizedurlshortener-app",
-            github: "https://github.com/devKartikeya/Dockerized-URL-Shortener.git"
-        },
-        {
-            title: "Portfolio Website",
-            description:
-                "A modern, responsive portfolio built with React, TailwindCSS, and GSAP animations. It showcases my skills, projects, and contact information in a sleek single‑page design with glassmorphism styling and smooth transitions. The site emphasizes premium UI aesthetics and interactive elements to leave a lasting impression.",
-            image: "/Portfolio.png",
-            link: "http://localhost:5173/",
-            github: "https://github.com/devKartikeya/Kartikeya-Mishra.git"
-        },
-        {
-            title: "Confab - Chat App",
-            description:
-                "A real‑time chat application leveraging React, Node.js, and WebSockets to provide secure and rapid communication. Confab supports multiple users simultaneously, offering instant message delivery, responsive design, and a clean interface. Built with scalability in mind, it demonstrates my ability to implement live data streams and socket‑based interactions.",
-            image: "/Confab.png",
-            link: "https://chat-app-using-react-ebon.vercel.app",
-            github: "https://github.com/devKartikeya/Chat-App-Using-React.git"
-        },
-        {
-            title: "Atmoscan",
-            description:
-                "A weather dashboard that delivers real‑time forecasts with clean visuals and detailed metrics. Atmoscan integrates APIs to provide temperature, humidity, wind speed, and extended forecasts, all wrapped in a modern UI. Designed for clarity and accessibility, it highlights my skills in API integration, responsive layouts, and data visualization.",
-            image: "/atmoscan2.png",
-            link: "https://katmoscan.netlify.app",
-            github: "https://github.com/devKartikeya/Atmoscan.git"
-        }
-    ]
-
+        return () => ctx.revert();
+    }, []);
 
     return (
-        <section ref={sectionRef} id="projects" className="w-full py-20 px-6 md:px-20 text-white">
-            <h2 className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-600 mb-10 text-center">
-                Projects
-            </h2>
+        <section
+            ref={sectionRef}
+            id="projects"
+            className="px-6 md:px-12 lg:px-20 py-28"
+        >
+            <div className="max-w-7xl mx-auto">
 
-            <Swiper
-                modules={[Navigation]}
-                navigation
-                spaceBetween={30}
-                slidesPerView={1}
-                breakpoints={{
-                    768: { slidesPerView: 2 },
-                    1024: { slidesPerView: 3 }
-                }}
-                className="w-full"
-            >
-                {projects.map((proj, i) => (
-                    <SwiperSlide key={i}>
-                        <div className="project-card backdrop-blur-md bg-white/5 border border-white/10 rounded-2xl shadow-lg p-6 
-                hover:scale-105 transition-transform duration-500 will-change-transform hover:scale-105 hover:shadow-2xl hover:shadow-pink-500/20 hover:bg-gradient-to-r hover:from-pink-500/10 hover:to-purple-600/10 hover:border-pink-500/30">
-                            <img src={proj.image} alt={proj.title} className="w-full h-40 object-cover rounded-lg mb-4" />
-                            <h3 className="text-xl font-semibold mb-2 cursor-default hover:text-pink-500">{proj.title}</h3>
-                            <p className="text-gray-300 text-sm mb-4 text-center">{proj.description}</p>
-                            <Link
-                                to={proj.link}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-block px-4 py-2 mx-3 my-2 bg-gradient-to-r from-pink-500 to-purple-600 text-white rounded-lg shadow-md hover:shadow-[0_0_15px_rgba(236,72,153,0.8)] transition"
-                            >
-                                View Project
-                            </Link>
-                            <Link
-                                to={proj.github}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-block px-4 py-2 mx-3 my-2 bg-gradient-to-r from-pink-500 to-purple-600 text-white rounded-lg shadow-md hover:shadow-[0_0_15px_rgba(236,72,153,0.8)] transition"
-                            >
-                                View GitHub
-                            </Link>
-                        </div>
-                    </SwiperSlide>
-                ))}
-            </Swiper>
+                {/* Heading */}
+                <div
+                    ref={headingRef}
+                    className="project-heading flex flex-col md:flex-row md:items-end justify-between gap-5 mb-12"
+                >
+                    <div>
+                        <p className="text-sm uppercase tracking-[0.3em] text-purple-400 mb-4">
+                            Selected work
+                        </p>
+
+                        <h2 className="text-4xl md:text-6xl font-bold tracking-tight">
+                            Projects
+                        </h2>
+                    </div>
+
+                    <p className="max-w-md text-gray-500 leading-relaxed">
+                        A collection of applications and experiments where I
+                        explore full-stack development, architecture and
+                        engineering.
+                    </p>
+                </div>
+
+                {/* Projects Slider */}
+                <div ref={sliderRef}>
+                    <Swiper
+                        modules={[Navigation]}
+                        navigation
+                        spaceBetween={24}
+                        slidesPerView={1}
+                        breakpoints={{
+                            768: {
+                                slidesPerView: 2,
+                            },
+                            1100: {
+                                slidesPerView: 3,
+                            },
+                        }}
+                        className="projects-slider !pb-5"
+                    >
+                        {projects.map((project) => (
+                            <SwiperSlide key={project.title}>
+                                <article className="project-card group h-full rounded-2xl border border-white/10 bg-white/[0.03] overflow-hidden hover:border-white/20 transition-all duration-500">
+
+                                    {/* Image */}
+                                    <div className="relative overflow-hidden">
+                                        <img
+                                            src={project.image}
+                                            alt={`${project.title} project screenshot`}
+                                            loading="lazy"
+                                            className="w-full h-52 object-cover transition-transform duration-700 group-hover:scale-105"
+                                        />
+
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-60" />
+
+                                        <span className="absolute top-4 left-4 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/10 text-xs text-gray-200">
+                                            {project.category}
+                                        </span>
+                                    </div>
+
+                                    {/* Content */}
+                                    <div className="p-6">
+                                        <div className="flex justify-between gap-4">
+                                            <h3 className="text-xl font-semibold">
+                                                {project.title}
+                                            </h3>
+
+                                            <FiArrowUpRight className="text-gray-500 group-hover:text-white transition-colors" />
+                                        </div>
+
+                                        <p className="mt-4 text-sm text-gray-400 leading-relaxed">
+                                            {project.description}
+                                        </p>
+
+                                        <div className="flex flex-wrap gap-2 mt-5">
+                                            {project.technologies.map(
+                                                (tech) => (
+                                                    <span
+                                                        key={tech}
+                                                        className="text-xs px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-gray-400"
+                                                    >
+                                                        {tech}
+                                                    </span>
+                                                )
+                                            )}
+                                        </div>
+
+                                        <div className="flex items-center gap-5 mt-6">
+                                            <a
+                                                href={project.link}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="inline-flex items-center gap-2 text-sm font-medium text-white hover:text-purple-400 transition-colors"
+                                            >
+                                                Live project
+                                                <FiExternalLink />
+                                            </a>
+
+                                            <a
+                                                href={project.github}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-white transition-colors"
+                                            >
+                                                <FiGithub />
+                                                Source
+                                            </a>
+                                        </div>
+                                    </div>
+                                </article>
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
+                </div>
+            </div>
         </section>
-    )
-}
+    );
+};
 
-export default Projects
+export default Projects;

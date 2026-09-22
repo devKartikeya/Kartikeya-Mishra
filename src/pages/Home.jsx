@@ -1,134 +1,214 @@
-import React, { useEffect, useRef } from 'react'
-import { FaGithub, FaLinkedin } from 'react-icons/fa'
-import Navbar from '../components/Navbar'
-import gsap from 'gsap'
-import Button from '../components/Button'
-import About from '../components/About'
-import Projects from '../components/Projects'
-import Skills from '../components/Skills'
-import Contact from '../components/Contact'
-import Footer from '../components/Footer'
+import React, { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { FaGithub, FaLinkedin, FaArrowDown } from "react-icons/fa";
+
+import Navbar from "../components/Navbar";
+import About from "../components/About";
+import Projects from "../components/Projects";
+import Skills from "../components/Skills";
+import Contact from "../components/Contact";
+import Footer from "../components/Footer";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Home = () => {
-    const nameRef = useRef(null)
-    const imageRef = useRef(null)
-    const buttonsRef = useRef([])
-    const roleRef = useRef(null)
+    const heroRef = useRef(null);
 
     useEffect(() => {
-        // Image animation (slower)
-        gsap.fromTo(imageRef.current,
-            { opacity: 0, x: -100 },
-            {
-                opacity: 1,
-                x: 0,
-                duration: 1.5, // slower
-                ease: "power3.out",
-                scrollTrigger: {
-                    trigger: imageRef.current,
-                    start: "top 80%",
-                    toggleActions: "play reverse play reverse"
-                }
-            }
-        )
+        const ctx = gsap.context(() => {
+            const tl = gsap.timeline({
+                defaults: {
+                    ease: "power3.out",
+                },
+            });
 
-        // Name typing (slower)
-        const text = "Kartikeya Mishra"
-        const chars = text.split("")
-        nameRef.current.innerHTML = ""
-        chars.forEach(char => {
-            const span = document.createElement("span")
-            span.textContent = char
-            span.style.opacity = 0
-            nameRef.current.appendChild(span)
-        })
+            tl.from(".hero-image", {
+                opacity: 0,
+                x: -50,
+                duration: 1,
+            })
+                .from(
+                    ".hero-eyebrow",
+                    {
+                        opacity: 0,
+                        y: 20,
+                        duration: 0.6,
+                    },
+                    "-=0.5"
+                )
+                .from(
+                    ".hero-title",
+                    {
+                        opacity: 0,
+                        y: 30,
+                        duration: 0.8,
+                    },
+                    "-=0.3"
+                )
+                .from(
+                    ".hero-description",
+                    {
+                        opacity: 0,
+                        y: 25,
+                        duration: 0.7,
+                    },
+                    "-=0.4"
+                )
+                .from(
+                    ".hero-actions",
+                    {
+                        opacity: 0,
+                        y: 20,
+                        duration: 0.6,
+                    },
+                    "-=0.3"
+                )
+                .from(
+                    ".hero-socials",
+                    {
+                        opacity: 0,
+                        y: 15,
+                        duration: 0.5,
+                    },
+                    "-=0.3"
+                );
+        }, heroRef);
 
-        gsap.to(nameRef.current.children, {
-            opacity: 1,
-            duration: 0.15, // slower per character
-            stagger: 0.15,
-            ease: "power1.inOut",
-            scrollTrigger: {
-                trigger: nameRef.current,
-                start: "top 80%",
-                toggleActions: "restart reverse restart reverse"
-            }
-        })
-
-        // Role typing (slower)
-        const roles = "Building Scalable Systems | MERN Developer | Laravel | DevOps Enthusiast"
-        const roleChars = roles.split("")
-        roleRef.current.innerHTML = ""
-        roleChars.forEach(char => {
-            const span = document.createElement("span")
-            span.textContent = char
-            span.style.opacity = 0
-            roleRef.current.appendChild(span)
-        })
-
-        gsap.to(roleRef.current.children, {
-            opacity: 1,
-            duration: 0.08, // slower
-            stagger: 0.08,
-            ease: "power1.inOut",
-            repeat: Infinity,
-            yoyo: true,
-            scrollTrigger: {
-                trigger: roleRef.current,
-                start: "top 80%",
-                toggleActions: "restart reverse restart reverse"
-            }
-        })
-
-        // Buttons (after text)
-        gsap.from(buttonsRef.current, {
-            opacity: 0,
-            scale: 0.8,
-            duration: 0.8,
-            stagger: 0.3,
-            ease: "back.out(1.7)",
-            scrollTrigger: {
-                trigger: roleRef.current, // wait until role section is visible
-                start: "bottom 99%",      // triggers after text finishes
-                toggleActions: "play reverse play reverse"
-            }
-        })
-    }, [])
+        return () => ctx.revert();
+    }, []);
 
     return (
-        <div className="bg-black w-screen min-h-screen flex flex-col" id='home'>
+        <div
+            ref={heroRef}
+            className="min-h-screen bg-[#050505] text-white overflow-x-hidden"
+        >
             <Navbar />
-            <div className="flex flex-1 flex-col md:flex-row items-center md:justify-between justify-center 
-                  px-6 md:px-20 space-y-10 md:space-y-0 md:space-x-20 pt-20 md:pt-24">
 
-                {/* Left side image */}
-                <div ref={imageRef} className="w-48 h-48 md:w-96 md:h-96 rounded-full overflow-hidden border-2 border-white flex-shrink-0 mx-auto md:mx-0">
-                    <img src="/Profile.jpeg" alt="Profile" className="w-full h-full object-cover rounded-full" />
-                </div>
-
-                {/* Right side content */}
-                <div className="text-white text-center md:text-left w-full md:w-1/2">
-                    <h1 ref={nameRef} className="text-3xl md:text-8xl font-bold"></h1>
-
-                    <div className="border-t border-gray-600 w-32 md:w-48 mx-auto md:mx-0 my-6"></div>
-
-                    <div ref={roleRef} className="text-xl md:text-2xl font-light tracking-wide"></div>
-
-                    <div className="border-t border-gray-600 w-32 md:w-48 mx-auto md:mx-0 my-6"></div>
-
-                    <div className="mt-8 flex md:flex-row gap-4 justify-center md:justify-start items-center">
-                        <Button icon={<FaGithub />} command="GitHub" ref={el => (buttonsRef.current[0] = el)} to="https://github.com/devKartikeya" />
-                        <Button icon={<FaLinkedin />} command="LinkedIn" ref={el => (buttonsRef.current[1] = el)} to="https://linkedin.com/in/kartikeya-mishra-8199973a9" />
+            {/* HERO */}
+            <main id="home">
+                <section className="relative min-h-screen flex items-center px-6 md:px-12 lg:px-20 pt-24">
+                    {/* Background glow */}
+                    <div className="absolute inset-0 pointer-events-none overflow-hidden">
+                        <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-purple-600/10 blur-[120px] rounded-full" />
+                        <div className="absolute bottom-1/4 right-1/4 w-72 h-72 bg-pink-500/10 blur-[120px] rounded-full" />
                     </div>
-                </div>
-            </div>
-            <About />
-            <Projects />
-            <Skills/>
-            <Contact />
+
+                    <div className="relative max-w-7xl w-full mx-auto grid lg:grid-cols-2 gap-16 items-center">
+                        {/* Image */}
+                        <div className="hero-image flex justify-center lg:justify-start order-2 lg:order-1">
+                            <div className="relative">
+                                <div className="absolute -inset-4 rounded-full bg-gradient-to-r from-pink-500/20 to-purple-600/20 blur-2xl" />
+
+                                <div className="relative w-56 h-56 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-full p-[2px] bg-gradient-to-br from-white/40 via-purple-500/50 to-pink-500/40">
+                                    <div className="w-full h-full rounded-full overflow-hidden bg-black">
+                                        <img
+                                            src="/Profile.jpeg"
+                                            alt="Kartikeya Mishra"
+                                            className="w-full h-full object-cover"
+                                        />
+                                    </div>
+                                </div>
+
+                                <div className="absolute -bottom-4 -right-4 bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl px-4 py-3 shadow-xl">
+                                    <p className="text-xs text-gray-400">
+                                        Currently building
+                                    </p>
+                                    <p className="text-sm font-semibold">
+                                        Shortify
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Content */}
+                        <div className="order-1 lg:order-2 text-center lg:text-left">
+                            <p className="hero-eyebrow text-sm uppercase tracking-[0.3em] text-purple-400 mb-5">
+                                Full-Stack Developer | System Design | DevOps Enthusiast
+                            </p>
+
+                            <h1 className="hero-title text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-normal leading-[0.95]">
+                                Kartikeya
+                                <br />
+                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-purple-400 to-indigo-400">
+                                    Mishra
+                                </span>
+                            </h1>
+
+                            <p className="hero-description mt-7 max-w-2xl mx-auto lg:mx-0 text-gray-400 text-base md:text-lg leading-relaxed">
+                                I build scalable web applications and explore
+                                the engineering behind reliable software —
+                                from full-stack development and system design
+                                to Docker and CI/CD.
+                            </p>
+
+                            <div className="hero-actions flex flex-wrap justify-center lg:justify-start gap-4 mt-8">
+                                <a
+                                    href="#projects"
+                                    className="group px-6 py-3 rounded-xl bg-white text-black font-medium transition-all duration-300 hover:bg-gray-200 hover:-translate-y-1"
+                                >
+                                    View my work
+                                    <span className="ml-2 inline-block transition-transform group-hover:translate-x-1">
+                                        →
+                                    </span>
+                                </a>
+
+                                <a
+                                    href="#contact"
+                                    className="px-6 py-3 rounded-xl border border-white/15 bg-white/5 backdrop-blur-md font-medium hover:bg-white/10 hover:border-white/25 transition-all duration-300"
+                                >
+                                    Let's connect
+                                </a>
+                            </div>
+
+                            <div className="hero-socials flex justify-center lg:justify-start items-center gap-5 mt-8">
+                                <a
+                                    href="https://github.com/devKartikeya"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label="GitHub"
+                                    className="text-gray-400 hover:text-white transition-colors"
+                                >
+                                    <FaGithub size={22} />
+                                </a>
+
+                                <a
+                                    href="https://linkedin.com/in/kartikeya-mishra-8199973a9"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label="LinkedIn"
+                                    className="text-gray-400 hover:text-white transition-colors"
+                                >
+                                    <FaLinkedin size={22} />
+                                </a>
+
+                                <span className="h-px w-12 bg-white/10" />
+
+                                <span className="text-xs text-gray-500">
+                                    Lucknow, India
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a
+                        href="#about"
+                        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-gray-500 hover:text-white transition-colors"
+                        aria-label="Scroll to About section"
+                    >
+                        <FaArrowDown className="animate-bounce" />
+                    </a>
+                </section>
+
+                <About />
+                <Projects />
+                <Skills />
+                <Contact />
+            </main>
+
             <Footer />
         </div>
-    )
-}
+    );
+};
 
-export default Home
+export default Home;

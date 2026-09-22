@@ -1,78 +1,93 @@
-import React, { useEffect, useRef } from 'react'
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import React, { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
-    const aboutRef = useRef(null)
-    const dividerRefs = useRef([])
-    const nameRef = useRef(null)
+    const sectionRef = useRef(null);
 
     useEffect(() => {
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: aboutRef.current,
-                start: "top 75%",   // starts when section is clearly visible
-                toggleActions: "play none none none",
-                once: true
-            }
-        })
+        const ctx = gsap.context(() => {
+            gsap.from(".about-content", {
+                opacity: 0,
+                y: 40,
+                duration: 1,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: sectionRef.current,
+                    start: "top 75%",
+                    once: true,
+                },
+            });
+        }, sectionRef);
 
-        tl.from(dividerRefs.current, {
-            width: 0,
-            duration: 0.8,
-            stagger: 0.2,
-            ease: "power3.out"
-        })
-
-        tl.from(nameRef.current, {
-            opacity: 0,
-            y: 30,
-            duration: 1,
-            ease: "power2.out"
-        }, "-=0.5")
-
-        tl.from(aboutRef.current.querySelector("p"), {
-            opacity: 0,
-            y: 30,
-            duration: 1,
-            ease: "power2.out"
-        }, "-=0.5")
-    }, [])
+        return () => ctx.revert();
+    }, []);
 
     return (
         <section
-            ref={aboutRef}
+            ref={sectionRef}
             id="about"
-            className="relative w-full py-16 px-6 md:px-20 flex flex-col items-center"
+            className="px-6 md:px-12 lg:px-20 py-28"
         >
-            {/* Neon Divider Top */}
-            <div
-                ref={el => (dividerRefs.current[0] = el)}
-                className="bg-gradient-to-r from-pink-500 to-purple-600 h-[2px] w-[60%] mx-auto mb-8 rounded-full shadow-[0_0_12px_rgba(236,72,153,0.7)]"
-            ></div>
-
-            {/* Glassmorphism Card */}
-            <div className="backdrop-blur-md bg-white/5 border border-white/10 rounded-2xl shadow-lg w-90%] p-8 md:p-10 text-center md:text-left">
-                <p className="text-gray-200 text-lg md:text-xl leading-relaxed">
-                    I see code as more than logic — it’s my <span className="text-pink-400 font-semibold">vision</span> brought to life.
-                    I design interfaces that breathe, empower, and inspire with clarity.
-                    Driven by <span className="text-purple-400 font-semibold">curiosity</span> and creativity, I craft experiences that are functional yet unforgettable.
-                    For me, development is <span className="text-pink-400 font-semibold">storytelling</span>, a way to leave a mark in the world of <span className="text-purple-400 font-semibold">innovation</span>.
+            <div className="max-w-5xl mx-auto">
+                <p className="text-sm uppercase tracking-[0.3em] text-purple-400 mb-4">
+                    About me
                 </p>
-                <h2 ref={nameRef} className="text-xl italic md:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-600 text-right mt-6">
-                    ~ Kartikeya Mishra
+
+                <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-10">
+                    Building software with{" "}
+                    <span className="text-gray-500">purpose.</span>
                 </h2>
+
+                <div className="about-content grid md:grid-cols-[1.5fr_1fr] gap-12">
+                    <div className="text-gray-400 text-lg leading-relaxed space-y-5">
+                        <p>
+                            I'm a full-stack developer interested in building
+                            applications that are not only functional, but
+                            thoughtfully engineered.
+                        </p>
+
+                        <p>
+                            My journey started with web development and has
+                            gradually expanded into backend architecture,
+                            databases, system design, containerization and
+                            CI/CD.
+                        </p>
+
+                        <p>
+                            I enjoy understanding what happens behind the
+                            interface — how applications communicate, scale,
+                            store data and remain reliable as complexity grows.
+                        </p>
+                    </div>
+
+                    <div className="grid grid-cols-2 gap-4">
+                        {[
+                            ["01", "Full-Stack Development"],
+                            ["02", "Backend Engineering"],
+                            ["03", "System Design"],
+                            ["04", "DevOps & CI/CD"],
+                        ].map(([number, title]) => (
+                            <div
+                                key={number}
+                                className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 hover:bg-white/[0.06] transition-colors"
+                            >
+                                <span className="text-xs text-purple-400">
+                                    {number}
+                                </span>
+
+                                <p className="mt-5 text-sm font-medium text-gray-200">
+                                    {title}
+                                </p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
             </div>
-
-            {/* Neon Divider Bottom */}
-            <div
-                ref={el => (dividerRefs.current[1] = el)}
-                className="bg-gradient-to-r from-purple-600 to-pink-500 h-[2px] w-[60%] mx-auto mt-8 rounded-full shadow-[0_0_12px_rgba(147,51,234,0.7)]"
-            ></div>
         </section>
-    )
-}
+    );
+};
 
-export default About
+export default About;
