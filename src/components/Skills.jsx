@@ -11,7 +11,6 @@ import {
     FaJava,
     FaLaravel,
     FaPhp,
-    FaJs,
     FaGithub
 } from "react-icons/fa";
 
@@ -28,9 +27,10 @@ import {
     SiGithubactions,
     SiLinux,
     SiRedis,
-    SiGit,
     SiC,
-    SiJavascript,
+    SiShadcnui,
+    SiRabbitmq,
+    SiSecurityscorecard
 } from "react-icons/si";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -94,6 +94,11 @@ const categories = [
                 icon: <span className="font-bold text-xs">GSAP</span>,
                 color: "text-green-400",
             },
+            {
+                name: "Shadcn UI",
+                icon: <SiShadcnui size={14}/>,
+                color: "text-pink-400",
+            },
         ],
     },
 
@@ -122,6 +127,11 @@ const categories = [
                 icon: <span className="font-bold text-xs">API</span>,
                 color: "text-purple-400",
             },
+            {
+                name: "AuthN & AuthZ",
+                icon: <SiSecurityscorecard size={14}/>,
+                color: "text-blue-400",
+            }
         ],
     },
 
@@ -164,6 +174,11 @@ const categories = [
         icon: "05",
         skills: [
             {
+                name: "Linux",
+                icon: <SiLinux />,
+                color: "text-yellow-400",
+            },
+            {
                 name: "Docker",
                 icon: <FaDocker />,
                 color: "text-blue-400",
@@ -174,11 +189,6 @@ const categories = [
                 color: "text-gray-200",
             },
             {
-                name: "Linux",
-                icon: <SiLinux />,
-                color: "text-yellow-400",
-            },
-            {
                 name: "Git",
                 icon: <FaGitAlt />,
                 color: "text-orange-500",
@@ -187,28 +197,18 @@ const categories = [
                 name: "GitHub",
                 icon: <FaGithub />,
                 color: "text-white",
-            },
-            {
-                name: "CI/CD",
-                icon: <span className="font-bold text-xs">CI/CD</span>,
-                color: "text-purple-400",
-            },
+            }
         ],
     },
 
     {
-        title: "Engineering",
+        title: "System Design",
         description: "Concepts I use to reason about scalable systems.",
         icon: "06",
         skills: [
             {
-                name: "System Design",
-                icon: <span className="font-bold text-xs">SD</span>,
-                color: "text-purple-400",
-            },
-            {
                 name: "Redis",
-                icon: <SiRedis />,
+                icon: <SiRedis size={14}/>,
                 color: "text-red-500",
             },
             {
@@ -226,6 +226,11 @@ const categories = [
                 icon: <span className="font-bold text-xs">HS</span>,
                 color: "text-green-400",
             },
+            {
+                name: "Message Brokers",
+                icon: <SiRabbitmq size={14}/>,
+                color: "text-yellow-400",
+            }
         ],
     },
 ];

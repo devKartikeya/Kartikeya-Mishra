@@ -58,7 +58,7 @@ const Navbar = () => {
                         ))}
 
                         <a
-                            href="/Kartikeya-Mishra-Resume.pdf"
+                            href="/Kartikeya_Mishra_Developer_Portfolio.pdf"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white text-black text-sm font-medium hover:bg-gray-200 transition-colors"
@@ -127,7 +127,7 @@ const Navbar = () => {
                         ))}
 
                         <a
-                            href="/Kartikeya-Mishra-Resume.pdf"
+                            href="/Kartikeya_Mishra_Developer_Portfolio.pdf"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="mt-4 inline-flex justify-center items-center gap-2 px-5 py-3 rounded-xl bg-white text-black font-medium"

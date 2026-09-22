@@ -77,7 +77,7 @@ const Contact = () => {
 
                             <a
                                 href="mailto:kartikeya2122008@gmail.com"
-                                className="inline-flex items-center gap-3 mt-8 text-gray-300 hover:text-white transition-colors"
+                                className="inline-flex items-center gap-3 mt-8 text-sm text-gray-300 hover:text-pink-500 transition-colors"
                             >
                                 <FiMail />
                                 kartikeya2122008@gmail.com
@@ -98,7 +98,7 @@ const Contact = () => {
                                     name="from_name"
                                     required
                                     placeholder="Your name"
-                                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-gray-600 outline-none focus:border-purple-500 transition-colors"
+                                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-gray-600 outline-none focus:border-purple-500 transition-colors text-sm"
                                 />
                             </div>
 
@@ -112,7 +112,7 @@ const Contact = () => {
                                     name="from_email"
                                     required
                                     placeholder="you@example.com"
-                                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-gray-600 outline-none focus:border-purple-500 transition-colors"
+                                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-gray-600 outline-none focus:border-purple-500 transition-colors text-sm"
                                 />
                             </div>
 
@@ -126,14 +126,14 @@ const Contact = () => {
                                     rows="5"
                                     required
                                     placeholder="Tell me about your project..."
-                                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-gray-600 outline-none focus:border-purple-500 transition-colors resize-none"
+                                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-gray-600 outline-none focus:border-purple-500 transition-colors text-sm resize-none"
                                 />
                             </div>
 
                             <button
                                 type="submit"
                                 disabled={status === "sending"}
-                                className="flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-white text-black font-medium hover:bg-gray-200 transition-colors disabled:opacity-50"
+                                className="flex items-center justify-center gap-2 px-5 py-3 rounded-xl cursor-pointer hover:border hover:border-pink-500 hover:text-pink-500 bg-white text-black font-medium hover:bg-gray-200 transition-colors disabled:opacity-50"
                             >
                                 <FiSend />
 
