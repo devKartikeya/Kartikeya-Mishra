@@ -12,6 +12,7 @@ import {
     FaLaravel,
     FaPhp,
     FaJs,
+    FaGithub
 } from "react-icons/fa";
 
 import {
@@ -28,6 +29,7 @@ import {
     SiLinux,
     SiRedis,
     SiGit,
+    SiC,
     SiJavascript,
 } from "react-icons/si";
 
@@ -40,8 +42,8 @@ const categories = [
         icon: "01",
         skills: [
             {
-                name: "JavaScript",
-                icon: <SiJavascript />,
+                name: "C",
+                icon: <SiC />,
                 color: "text-yellow-400",
             },
             {
@@ -180,6 +182,11 @@ const categories = [
                 name: "Git",
                 icon: <FaGitAlt />,
                 color: "text-orange-500",
+            },
+            {
+                name: "GitHub",
+                icon: <FaGithub />,
+                color: "text-white",
             },
             {
                 name: "CI/CD",

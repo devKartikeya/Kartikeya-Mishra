@@ -21,15 +21,15 @@ const projects = [
         description:
             "A scalable URL shortening platform exploring authentication, user-specific links, Redis, rate limiting, Docker, load balancing and CI/CD.",
         image: "Shortify.png",
-        technologies: ["React", "Node.js", "MongoDB", "Docker"],
-        link: "#",
-        github: "#",
+        technologies: ["React", "MongoDB", "Redis", "Docker"],
+        link: "https://github.com/Shortify.git",
+        github: "https://github.com/Shortify.git",
     },
     {
         title: "Xpense Tracker",
         category: "MERN Stack",
         description:
-            "A full-stack personal finance platform with authentication, expense and income tracking, analytics, ledger views and administrative controls.",
+            "A full-stack personal finance platform with AuthN, expense & income tracking, analytics, ledger views & administrative controls.",
         image: "X.png",
         technologies: ["React", "Express", "MongoDB", "JWT"],
         link: "https://expense-tracker-mern-project-seven.vercel.app/",
@@ -48,17 +48,6 @@ const projects = [
             "https://github.com/devKartikeya/Heritage-Junction.git",
     },
     {
-        title: "Dockerized URL Shortener",
-        category: "Docker · Backend",
-        description:
-            "A containerized Node.js URL shortener demonstrating Docker images, networking, volumes, Compose and service isolation.",
-        image: "Dockerized-URL-Shortener.png",
-        technologies: ["Node.js", "Docker", "MongoDB"],
-        link: "https://hub.docker.com/r/devkartikeya/dockerizedurlshortener-app",
-        github:
-            "https://github.com/devKartikeya/Dockerized-URL-Shortener.git",
-    },
-    {
         title: "Confab",
         category: "Real-Time Application",
         description:
@@ -75,7 +64,7 @@ const projects = [
         description:
             "A weather dashboard consuming external APIs to present current weather conditions and forecast information.",
         image: "atmoscan2.png",
-        technologies: ["React", "API", "CSS"],
+        technologies: ["React", "API", "TailwindCSS"],
         link: "https://katmoscan.netlify.app",
         github:
             "https://github.com/devKartikeya/Atmoscan.git",

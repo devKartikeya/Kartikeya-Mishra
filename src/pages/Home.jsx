@@ -177,7 +177,7 @@ const Home = () => {
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     aria-label="LinkedIn"
-                                    className="text-gray-400 hover:text-white transition-colors"
+                                    className="text-gray-400 hover:text-blue-500 transition-colors"
                                 >
                                     <FaLinkedin size={22} />
                                 </a>
