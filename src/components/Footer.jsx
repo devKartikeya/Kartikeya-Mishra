@@ -4,7 +4,7 @@ import { FiArrowUpRight } from "react-icons/fi";
 
 const Footer = () => {
     return (
-        <footer className="border-t border-white/10 px-6 md:px-12 lg:px-20 py-10">
+        <footer className="border-t border-white/10 px-6 md:px-12 lg:px-20 py-14">
             <div className="max-w-7xl mx-auto">
                 <div className="flex flex-col md:flex-row justify-between gap-8">
                     <div>
