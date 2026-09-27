@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import gsap from "gsap";
 import { FiMenu, FiX, FiDownload } from "react-icons/fi";
 
@@ -6,6 +6,7 @@ const links = [
     { name: "Home", href: "#home" },
     { name: "About", href: "#about" },
     { name: "Projects", href: "#projects" },
+    { name: "Certificates", href: "#certificates" },
     { name: "Skills", href: "#skills" },
     { name: "Contact", href: "#contact" },
 ];

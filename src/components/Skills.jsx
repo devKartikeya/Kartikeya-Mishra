@@ -1,37 +1,8 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-import {
-    FaReact,
-    FaNodeJs,
-    FaPython,
-    FaGitAlt,
-    FaDocker,
-    FaJava,
-    FaLaravel,
-    FaPhp,
-    FaGithub
-} from "react-icons/fa";
-
-import {
-    SiTypescript,
-    SiNextdotjs,
-    SiExpress,
-    SiTailwindcss,
-    SiMongodb,
-    SiMysql,
-    SiPostgresql,
-    SiMongoose,
-    SiPrisma,
-    SiGithubactions,
-    SiLinux,
-    SiRedis,
-    SiC,
-    SiShadcnui,
-    SiRabbitmq,
-    SiSecurityscorecard
-} from "react-icons/si";
+import { FaReact, FaNodeJs, FaPython, FaGitAlt, FaDocker, FaJava, FaLaravel, FaPhp, FaGithub } from "react-icons/fa";
+import { SiTypescript, SiNextdotjs, SiExpress, SiTailwindcss, SiMongodb, SiMysql, SiPostgresql, SiMongoose, SiPrisma, SiGithubactions, SiLinux, SiRedis, SiC, SiShadcnui, SiRabbitmq, SiSecurityscorecard } from "react-icons/si";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -96,7 +67,7 @@ const categories = [
             },
             {
                 name: "Shadcn UI",
-                icon: <SiShadcnui size={14}/>,
+                icon: <SiShadcnui size={14} />,
                 color: "text-pink-400",
             },
         ],
@@ -129,7 +100,7 @@ const categories = [
             },
             {
                 name: "AuthN & AuthZ",
-                icon: <SiSecurityscorecard size={14}/>,
+                icon: <SiSecurityscorecard size={14} />,
                 color: "text-blue-400",
             }
         ],
@@ -208,7 +179,7 @@ const categories = [
         skills: [
             {
                 name: "Redis",
-                icon: <SiRedis size={14}/>,
+                icon: <SiRedis size={14} />,
                 color: "text-red-500",
             },
             {
@@ -228,7 +199,7 @@ const categories = [
             },
             {
                 name: "Message Brokers",
-                icon: <SiRabbitmq size={14}/>,
+                icon: <SiRabbitmq size={14} />,
                 color: "text-yellow-400",
             }
         ],

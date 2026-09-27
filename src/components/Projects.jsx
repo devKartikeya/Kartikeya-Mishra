@@ -1,11 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import {
-    FiExternalLink,
-    FiGithub,
-    FiArrowUpRight,
-} from "react-icons/fi";
+import { FiExternalLink, FiGithub, FiArrowUpRight, } from "react-icons/fi";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 
