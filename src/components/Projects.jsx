@@ -12,14 +12,14 @@ gsap.registerPlugin(ScrollTrigger);
 
 const projects = [
     {
-        title: "Shortify",
+        title: "WhyLong",
         category: "Full-Stack · DevOps",
         description:
             "A scalable URL shortening platform exploring authentication, user-specific links, Redis, rate limiting, Docker, load balancing and CI/CD.",
         image: "Shortify.png",
         technologies: ["React", "MongoDB", "Redis", "Docker"],
-        link: "https://github.com/Shortify.git",
-        github: "https://github.com/Shortify.git",
+        link: "https://github.com/devKartikeya/WhyLong",
+        github: "https://github.com/devKartikeya/WhyLong",
     },
     {
         title: "Xpense Tracker",

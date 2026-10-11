@@ -116,7 +116,7 @@ const Home = () => {
                                         Currently building
                                     </p>
                                     <p className="text-sm font-semibold">
-                                        Shortify
+                                        WhyLong
                                     </p>
                                 </div>
                             </div>
