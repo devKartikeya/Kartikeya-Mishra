@@ -18,7 +18,7 @@ const projects = [
             "A scalable URL shortening platform exploring authentication, user-specific links, Redis, rate limiting, Docker, load balancing and CI/CD.",
         image: "Shortify.png",
         technologies: ["React", "MongoDB", "Redis", "Docker"],
-        link: "https://github.com/devKartikeya/WhyLong",
+        link: "https://whylong.vercel.app",
         github: "https://github.com/devKartikeya/WhyLong",
     },
     {
