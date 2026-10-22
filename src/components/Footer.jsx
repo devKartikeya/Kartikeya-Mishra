@@ -1,5 +1,5 @@
 import React from "react";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaDev, FaInstagram } from "react-icons/fa";
 import { FiArrowUpRight } from "react-icons/fi";
 
 const Footer = () => {
@@ -35,9 +35,29 @@ const Footer = () => {
                             target="_blank"
                             rel="noopener noreferrer"
                             aria-label="LinkedIn"
-                            className="text-gray-500 hover:text-white transition-colors"
+                            className="text-gray-500 hover:text-blue-500 transition-colors"
                         >
                             <FaLinkedin size={20} />
+                        </a>
+
+                        <a
+                            href="https://dev.to/devKartikeya"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="DEV"
+                            className="text-gray-500 hover:text-white transition-colors"
+                        >
+                            <FaDev size={20} />
+                        </a>
+
+                        <a
+                            href="https://instagram.com/devKartikeya"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Instagram"
+                            className="text-gray-500 hover:text-pink-500 transition-colors"
+                        >
+                            <FaInstagram size={20} />
                         </a>
 
                         <a

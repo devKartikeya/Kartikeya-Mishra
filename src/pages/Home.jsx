@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { FaGithub, FaLinkedin, FaArrowDown } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaArrowDown, FaDev } from "react-icons/fa";
 
 import Navbar from "../components/Navbar";
 import About from "../components/About";
@@ -181,6 +181,16 @@ const Home = () => {
                                     className="text-gray-400 hover:text-blue-500 transition-colors"
                                 >
                                     <FaLinkedin size={22} />
+                                </a>
+
+                                <a
+                                    href="https://dev.to/devKartikeya"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label="DEV"
+                                    className="text-gray-500 hover:text-white transition-colors"
+                                >
+                                    <FaDev size={20} />
                                 </a>
 
                                 <span className="h-px w-12 bg-white/10" />
