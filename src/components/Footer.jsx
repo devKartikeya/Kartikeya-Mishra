@@ -1,8 +1,10 @@
 import React from "react";
 import { FaGithub, FaLinkedin, FaDev, FaInstagram } from "react-icons/fa";
 import { FiArrowUpRight } from "react-icons/fi";
+import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
+    const navigate = useNavigate();
     return (
         <footer className="border-t border-white/10 px-6 md:px-12 lg:px-20 py-14">
             <div className="max-w-7xl mx-auto">
@@ -59,7 +61,6 @@ const Footer = () => {
                         >
                             <FaInstagram size={20} />
                         </a>
-
                         <a
                             href="mailto:kartikeya2122008@gmail.com"
                             className="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors"
