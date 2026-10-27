@@ -1,10 +1,19 @@
+<div align="center">
+
 # 🚀 Kartikeya Mishra Portfolio
+
+</div>
+
+## Kartikeya Mishra is a full-stack developer and a system design engineer who builds robust backend applications and is specialized in technologies such as React, Docker, Redis and other system design tools.
+
+## Kartikeya Mishra is also the founder of WhyLong - a Link Management System and an alternative to Bitly.
 
 A premium and fully animated developer portfolio built using **React**, **GSAP**, and **TailwindCSS** to showcase my projects, skills, experience, and creative frontend development journey.
 
 This portfolio combines **modern UI/UX**, **smooth animations**, **glassmorphism effects**, and **responsive layouts** to create an immersive and visually engaging single-page experience.
 
 Designed with performance, aesthetics, and interactivity in mind, the portfolio reflects both my technical skills and passion for creating polished web experiences.
+
 
 ---
 
@@ -211,20 +220,19 @@ Feel free to connect or collaborate 🚀
 
 📧 Email: **[kartikeya2122008@gmail.com](mailto:kartikeya2122008@gmail.com)**
 
+📧 WhyLong: **[WhyLong](https://whylong.vercel.app)**
+
 💻 GitHub: **devKartikeya**
 
-🔗 LinkedIn: **https://linkedin.com/in/kartikeya-mishra-8199973a9**
+🔗 LinkedIn: **[Kartikeya Mishra's LinkedIn](https://linkedin.com/in/devKartikeya)**
 
----
+🔗 DEV: **[Kartikeya Mishra's DEV Profile](https://dev.to/devKartikeya)**
 
-# 📄 License
-
-This project is licensed under the **MIT License**.
-
-You are free to use, modify, and distribute this project with proper attribution.
+🔗 Medium: **[Kartikeya Mishra's Medium Profile](https://medium.com/@devKartikeya)**
 
 ---
 
 # ⭐ Support
 
 If you like this project, consider giving it a ⭐ on GitHub — it helps support and motivates further development.
+
