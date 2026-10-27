@@ -104,7 +104,7 @@ const Home = () => {
                                 <div className="relative w-56 h-56 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-full p-[2px] bg-gradient-to-br from-white/40 via-purple-500/50 to-pink-500/40">
                                     <div className="w-full h-full rounded-full overflow-hidden bg-black">
                                         <img
-                                            src="/Profile.jpeg"
+                                            src="/favicon.jpeg"
                                             alt="Kartikeya Mishra"
                                             className="w-full h-full object-cover"
                                         />
